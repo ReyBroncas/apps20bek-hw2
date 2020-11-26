@@ -108,8 +108,8 @@ public class ImmutableArrayListTest {
     @Test
     public void testArrayListAppendObjList() {
         Object[] arr01 = new Object[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-        Object[] arr02 = new Object[]{133};
-        Object[] expectedValue = new Object[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 133};
+        Object[] arr02 = new Object[]{1,3,3};
+        Object[] expectedValue = new Object[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 1,3,3};
         TestArrayListObjListAdd(arr01, arr02, -1, expectedValue);
     }
 
