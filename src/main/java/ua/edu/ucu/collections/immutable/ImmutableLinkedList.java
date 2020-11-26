@@ -68,8 +68,8 @@ public class ImmutableLinkedList implements ImmutableList {
         int newLen = size + listSize;
         Object[] currArray = this.toArray();
         Object[] newArray = new Object[listSize + size];
-
-        for (int i = 0, j = 0; i < newLen; ++i) {
+        int j = 0;
+        for (int i = 0; i < newLen; ++i) {
             if (i < index) {
                 newArray[i] = currArray[i];
             } else if (i >= index && j < values.length) {
@@ -103,9 +103,13 @@ public class ImmutableLinkedList implements ImmutableList {
         checkBounds(index);
         Object[] currArray = this.toArray();
         Object[] newArray = new Object[listSize];
-        if (index >= 0) System.arraycopy(currArray, 0, newArray, 0, index);
-        if (listSize - 1 - index >= 0) System.arraycopy(currArray, index + 1,
-                newArray, index, listSize - 1 - index);
+        if (index >= 0) {
+            System.arraycopy(currArray, 0, newArray, 0, index);
+        }
+        if (listSize - 1 - index >= 0) {
+            System.arraycopy(currArray, index + 1,
+                    newArray, index, listSize - 1 - index);
+        }
         return new ImmutableLinkedList(newArray);
     }
 

@@ -5,16 +5,20 @@ public class Node {
     private Node next;
     private Node prev;
 
-    public Node(Object value) {
-        this.value = value;
+    public Node(Object e) {
+        this.value = e;
     }
 
-    public void setNext(Node value) {
-        this.next = value;
+    public void setNext(Node e) {
+        this.next = e;
     }
 
-    public void setPrev(Node value) {
-        this.prev = value;
+    public void setPrev(Node e) {
+        this.prev = e;
+    }
+
+    public void setValue(Object e) {
+        this.value = e;
     }
 
     public Object getValue() {
@@ -27,9 +31,5 @@ public class Node {
 
     public Node getPrev() {
         return this.prev;
-    }
-
-    public void setValue(Object e) {
-        this.value = e;
     }
 }

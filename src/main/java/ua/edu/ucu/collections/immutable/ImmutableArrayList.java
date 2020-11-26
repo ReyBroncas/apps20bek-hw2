@@ -48,8 +48,8 @@ public class ImmutableArrayList implements ImmutableList {
         }
         int newLen = arraySize + c.length;
         Object[] newArray = new Object[newLen];
-
-        for (int i = 0, j = 0; i < newLen; ++i) {
+        int j = 0;
+        for (int i = 0; i < newLen; ++i) {
             if (i < index) {
                 newArray[i] = arrayList[i];
             } else if (i >= index && j < c.length) {
