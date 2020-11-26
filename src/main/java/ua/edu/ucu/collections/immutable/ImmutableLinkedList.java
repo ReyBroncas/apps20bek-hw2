@@ -162,6 +162,17 @@ public class ImmutableLinkedList implements ImmutableList {
         return outputArr;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder out = new StringBuilder();
+        out.append("[ ");
+        for (Object e : this.toArray()) {
+            out.append(e).append(" ");
+        }
+        out.append("]");
+        return out.toString();
+    }
+
     public ImmutableLinkedList addFirst(Object e) {
         return (ImmutableLinkedList) add(0, e);
 

@@ -199,4 +199,13 @@ public class ImmutableLinkedListTest {
         int expectedValue = -1;
         TestListIndexOf(list01, value, expectedValue);
     }
+
+    @Test
+    public void testToStringArray() {
+        Object[] arr01 = new Object[]{1, 2, 3};
+        String expectedValue = "[ 1 2 3 ]";
+        ImmutableLinkedList arrayList = new ImmutableLinkedList(arr01);
+        String realValue = arrayList.toString();
+        assertEquals(realValue, expectedValue);
+    }
 }

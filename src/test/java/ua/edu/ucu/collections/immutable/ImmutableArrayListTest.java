@@ -178,11 +178,12 @@ public class ImmutableArrayListTest {
         TestArrayIndexOf(arr01, value, expectedValue);
     }
 
-    public void printArray(Object[] arr) {
-        System.out.println("---------");
-        for (Object o : arr) {
-            System.out.println(o);
-        }
-        System.out.println("---------");
+    @Test
+    public void testToStringArray() {
+        Object[] arr01 = new Object[]{1, 2, 3};
+        String expectedValue = "[ 1 2 3 ]";
+        ImmutableArrayList arrayList = new ImmutableArrayList(arr01);
+        String realValue = arrayList.toString();
+        assertEquals(realValue, expectedValue);
     }
 }

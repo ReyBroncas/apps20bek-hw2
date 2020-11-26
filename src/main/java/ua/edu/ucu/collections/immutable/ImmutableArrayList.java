@@ -125,4 +125,15 @@ public class ImmutableArrayList implements ImmutableList {
         }
         return outputArray;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder out = new StringBuilder();
+        out.append("[ ");
+        for(Object e: arrayList){
+            out.append(e).append(" ");
+        }
+        out.append("]");
+        return out.toString();
+    }
 }
